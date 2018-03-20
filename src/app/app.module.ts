@@ -4,6 +4,9 @@ import {RouterModule} from '@angular/router';
 
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
+import {routes} from './routes';
+
+import {LoginComponent} from './login/login.component';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,14 +16,11 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
   declarations: [
     AppComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
-    ]),
+    RouterModule.forRoot(routes),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
