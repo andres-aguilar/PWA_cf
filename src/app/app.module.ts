@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {routes} from './routes';
 
 import {LoginComponent} from './login/login.component';
@@ -25,7 +26,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [AuthService],
+  providers: [AuthService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
