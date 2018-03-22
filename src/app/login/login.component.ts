@@ -8,7 +8,9 @@ import {AuthService} from '../services/auth.service';
 export class LoginComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.auth.getUser().subscribe(console.log);
+  }
 
   login() {
     this.auth.login().then(console.log);
