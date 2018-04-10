@@ -13,16 +13,16 @@ import 'rxjs/add/operator/filter';
 export class AuthService {
   constructor(private afAuth: AngularFireAuth) {}
 
-  getUser() : Observable<IUser> {
+  getUser(): Observable<IUser> {
     return this.afAuth.authState
     .take(1)
     .filter(user => !!user)
-    .map((user : firebase.User) => {
+    .map((user: firebase.User) => {
       return user as IUser;
     });
   }
 
-  login() : Promise<void> {
+  login(): Promise<void> {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then(result => {
       console.log(result);

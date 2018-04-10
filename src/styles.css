@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/defaults.css";
+@import "./styles/colors.css";
+
+.main-nav {
+  background-color: var(--blue);
+  padding: 10px 15px;
+  color: var(--grey);
+}
+
+.main-nav a {
+  text-decoration: none;
+}

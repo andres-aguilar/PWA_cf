@@ -9,16 +9,16 @@ import * as firebase from 'firebase/app';
 
 
 @Injectable()
-export class AuthGuard implements CanActivate{
+export class AuthGuard implements CanActivate {
 
-  constructor(private afAuth : AngularFireAuth, private router : Router) {}
+  constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
-  canActivate(route : ActivatedRouteSnapshot, state : RouterStateSnapshot) : Observable<boolean>{
-    return this.afAuth.authState.take(1).map((user : firebase.User) => {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+    return this.afAuth.authState.take(1).map((user: firebase.User) => {
       return !!user;  // Get user info
-    }).do((authenticated : boolean) => {
+    }).do((authenticated: boolean) => {
       // If not loggedIn
-      if(!authenticated) this.router.navigate(['/login']);
-    })
+      if (!authenticated) { this.router.navigate(['/login']); }
+    });
   }
 }

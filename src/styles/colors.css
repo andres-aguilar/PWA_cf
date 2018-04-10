@@ -1,0 +1,17 @@
+/*
+  red: #ff5349
+  blue: #4f80e1
+  green: #18cdca
+  grey: #f0f0f1
+  purple: #292c44
+  black: #302d33
+*/
+
+:root {
+  --red: #ff5349;
+  --blue: #4f80e1;
+  --green: #18cdca;
+  --grey: #f0f0f1;
+  --purple: #292c44;
+  --black: #302d33;
+}
