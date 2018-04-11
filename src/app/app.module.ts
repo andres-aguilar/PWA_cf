@@ -5,10 +5,12 @@ import {RouterModule} from '@angular/router';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFirestore} from 'angularfire2/firestore';
 import {routes} from './routes';
 
 import {LoginComponent} from './login/login.component';
 import {AuthService} from './services/auth.service';
+import {UserService} from './services/users.service';
 
 import {AuthGuard} from './guards/auth.guard.service';
 
@@ -28,7 +30,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [AuthService, AngularFireAuth, AuthGuard],
+  providers: [AuthService, AngularFireAuth, AuthGuard, AngularFirestore, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
