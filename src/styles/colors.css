@@ -15,3 +15,7 @@
   --purple: #292c44;
   --black: #302d33;
 }
+
+.blue {background-color: var(--blue)}
+
+.ligth-text {color: var(--grey)}

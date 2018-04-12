@@ -3,6 +3,8 @@ body {
   margin-left: 0;
   margin-right: 0;
   font-family: 'Open Sans', Roboto, Helvetica;
+  background-color: var(--purple);
+  color: var(--grey);
 }
 
 a {
