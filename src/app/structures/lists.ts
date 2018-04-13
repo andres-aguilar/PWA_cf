@@ -1,5 +1,5 @@
 export interface IList {
   id ?: string;
-  title : string;
+  title: string;
   createdAt ?: any;
 }

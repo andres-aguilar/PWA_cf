@@ -7,10 +7,10 @@ import {ListService} from '../../services/lists.service';
   selector: 'creator',
   templateUrl: 'list.creator.component.html'
 })
-export class ListCreatorComponent implements OnInit{
-  public list : IList = {title: ''}
+export class ListCreatorComponent implements OnInit {
+  public list: IList = {title: ''};
 
-  constructor(private listS : ListService) {}
+  constructor(private listS: ListService) {}
   ngOnInit() {}
 
   save() {

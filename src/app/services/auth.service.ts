@@ -12,7 +12,7 @@ import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth, private userS : UserService) {}
+  constructor(private afAuth: AngularFireAuth, private userS: UserService) {}
 
   getUser(): Observable<IUser> {
     return this.afAuth.authState

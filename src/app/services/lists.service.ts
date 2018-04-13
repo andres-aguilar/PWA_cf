@@ -10,23 +10,23 @@ import {IList} from '../structures/lists';
 
 @Injectable()
 export class ListService {
-  public uid : string;
-  public lists : AngularFirestoreCollection<IList>;
+  public uid: string;
+  public lists: AngularFirestoreCollection<IList>;
 
-  constructor(public afs: AngularFirestore, private auth : AuthService) {
+  constructor(public afs: AngularFirestore, private auth: AuthService) {
     this.auth.getUser().subscribe(user => {
       this.uid = user.uid;
 
-      if(this.uid) this.setCollection();
-    })
+      if (this.uid) { this.setCollection(); }
+    });
   }
 
   setCollection() {
     this.lists = this.afs.collection('users').doc(this.uid).collection<IList>('lists');
   }
 
-  add(list : IList) : Promise<any> {
-    if(!this.lists) throw Error('Set a collection before trying to add a new document');
+  add(list: IList): Promise<any> {
+    if (!this.lists) { throw Error('Set a collection before trying to add a new document'); }
 
     const createdAt = firebase.firestore.FieldValue.serverTimestamp();
     list.createdAt = createdAt;
