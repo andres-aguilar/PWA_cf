@@ -12,6 +12,7 @@ import {routes} from './routes';
 import {LoginComponent} from './login/login.component';
 import {AuthService} from './services/auth.service';
 import {UserService} from './services/users.service';
+import {ListService} from './services/lists.service';
 import {AuthGuard} from './guards/auth.guard.service';
 
 import {ListCreatorComponent} from './lists/creator/list.creator.component';
@@ -34,7 +35,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule
   ],
-  providers: [AuthService, AngularFireAuth, AuthGuard, AngularFirestore, UserService],
+  providers: [AuthService, AngularFireAuth, AuthGuard, AngularFirestore, UserService, ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
