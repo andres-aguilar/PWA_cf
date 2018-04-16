@@ -14,6 +14,7 @@
   --grey: #f0f0f1;
   --purple: #292c44;
   --black: #302d33;
+  --white: #fff;
 }
 
 .blue {background-color: var(--blue)}
