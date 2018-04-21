@@ -13,10 +13,13 @@ import {LoginComponent} from './login/login.component';
 import {AuthService} from './services/auth.service';
 import {UserService} from './services/users.service';
 import {ListService} from './services/lists.service';
+import {TodoService} from './services/todos.service';
+
 import {AuthGuard} from './guards/auth.guard.service';
 
 import {ListCreatorComponent} from './lists/creator/list.creator.component';
 import {ListComponent} from './lists/list.component';
+import {TodoCreatorComponent} from './todos/creator/todos.creator.component';
 
 import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +32,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     LoginComponent,
     ListCreatorComponent,
     ListComponent,
+    TodoCreatorComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
@@ -37,7 +41,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule
   ],
-  providers: [AuthService, AngularFireAuth, AuthGuard, AngularFirestore, UserService, ListService],
+  providers: [AuthService, AngularFireAuth, AuthGuard, AngularFirestore, UserService, ListService, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

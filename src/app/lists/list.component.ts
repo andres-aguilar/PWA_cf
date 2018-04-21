@@ -6,9 +6,10 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: 'list.component.html'
 })
 export class ListComponent implements OnInit {
+  public listId : string;
   constructor(private route : ActivatedRoute) {}
 
   ngOnInit() {
-    console.log(this.route.snapshot.params.id);
+    this.listId = this.route.snapshot.params.id;
   }
 }
