@@ -13,7 +13,7 @@ export class TodoCreatorComponent implements OnInit {
 
   constructor(private todoS : TodoService) {}
   save() {
-    console.log(this.id);
-    //this.todoS.add("", this.todo);
+    //console.log(this.id);
+    this.todoS.add(this.id, this.todo);
   }
 }
