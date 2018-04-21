@@ -16,6 +16,7 @@ import {ListService} from './services/lists.service';
 import {AuthGuard} from './guards/auth.guard.service';
 
 import {ListCreatorComponent} from './lists/creator/list.creator.component';
+import {ListComponent} from './lists/list.component';
 
 import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     HomeComponent,
     LoginComponent,
     ListCreatorComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
