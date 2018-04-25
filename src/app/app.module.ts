@@ -20,6 +20,7 @@ import {AuthGuard} from './guards/auth.guard.service';
 import {ListCreatorComponent} from './lists/creator/list.creator.component';
 import {ListComponent} from './lists/list.component';
 import {TodoCreatorComponent} from './todos/creator/todos.creator.component';
+import {TodoCardComponent} from './todos/card/todo.card.component';
 
 import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
@@ -33,6 +34,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     ListCreatorComponent,
     ListComponent,
     TodoCreatorComponent,
+    TodoCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
