@@ -8,6 +8,16 @@
 .full-width {width: 100%}
 .float-right {float: right}
 .top-space {margin-top: 1em}
+.text-right {text-align: right}
+.no-background {background-color: transparent}
+.overflow-hidden {overflow: hidden}
+
+button.no-background {
+  font-size: 1em;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
 
 .form-control {
   width: 100%;
