@@ -16,7 +16,7 @@ button.no-background {
   font-size: 1em;
   outline: 0;
   border: 0;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .form-control {
@@ -28,7 +28,7 @@ button.no-background {
   margin-top: 1em;
   font-size: 1em;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 .btn {
@@ -40,13 +40,13 @@ button.no-background {
   box-sizing: border-box;
   font-size: 1em;
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .main-nav {
   background-color: var(--blue);
   padding: 10px 15px;
-  color: var(--grey);
+  color: var(--grey)
 }
 
 .main-nav a {text-decoration: none}
@@ -67,6 +67,18 @@ button.no-background {
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas: "title title title title title title title title badge badge";
   align-items: center
+}
+
+.todo-card { position: relative}
+.todo-card::after {
+  position: absolute;
+  z-index: -1;
+  content: '\f00c';
+  font-family: fontawesome;
+  top: 50%;
+  right: -2em;
+  font-weight: bold;
+  color: var(--green)
 }
 
 .card.with-badge h4 {grid-area: title}

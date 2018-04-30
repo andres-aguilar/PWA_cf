@@ -22,7 +22,9 @@ export class TodoCreatorComponent implements OnInit {
 
   constructor(private todoS : TodoService) {}
   save() {
-    this.todoS.add(this.id, this.todo);
+    this.todoS.add(this.id, this.todo).then((r) => {
+      this.todo = {content: '', description: null, status: TStatus.Created}
+    });
   }
 
   toggleForm() {
