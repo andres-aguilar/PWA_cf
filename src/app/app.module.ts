@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
@@ -48,6 +49,9 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     BrowserAnimationsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', {
+      enabled: environment.production
+    }),
   ],
   providers: [AuthService, AngularFireAuth, AuthGuard, AngularFirestore, UserService, ListService, TodoService],
   bootstrap: [AppComponent]

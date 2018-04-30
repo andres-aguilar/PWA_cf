@@ -21,7 +21,7 @@ import {animate, trigger, state, stagger, style, transition, query} from '@angul
 export class HomeComponent implements OnInit {
   public message: string;
 
-  constructor(private listS : ListService) {}
+  constructor(public listS : ListService) {}
 
   ngOnInit() {}
 }
