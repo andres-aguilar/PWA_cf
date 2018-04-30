@@ -3,6 +3,9 @@ import {ITodo, TStatus} from '../../structures/todos';
 import {TodoService} from '../../services/todos.service';
 import {animate, transition, trigger, state, style} from "@angular/animations";
 
+import * as moment from 'moment';
+moment.locale('es');
+
 @Component({
   selector: 'todo-card',
   templateUrl: 'todo.card.component.html',
@@ -29,6 +32,7 @@ export class TodoCardComponent implements OnInit {
   @Input() todo : ITodo;
   @Input() listId : string;
   public press : string = 'up'; // up|down
+  public moment : any = moment;
 
   constructor(private todoS : TodoService) {}
   ngOnInit() {}

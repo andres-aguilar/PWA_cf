@@ -9,6 +9,11 @@
   (swipeLeft)="completed()">
 
   <h4>{{todo.content}}</h4>
+
+  <p *ngIf="todo.deadline">
+    <i class="fa fa-calendar"></i>
+    {{moment(todo.deadline).fromNow()}}
+  </p>
   <p *ngIf="todo.description">{{todo.description}}</p>
-  
+
 </article>
