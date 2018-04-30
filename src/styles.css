@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles/colors.css";
 @import "./styles/defaults.css";
+@import "ng-pick-datetime/assets/style/picker.min.css";
 
 .small-font {font-size: 0.8rem;}
 .large-padding {padding: 10px 15px}

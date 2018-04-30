@@ -8,6 +8,11 @@
   <input [(ngModel)]="todo.content" type="text" placeholder="¿Qué vas a hacer?" class="form-control" required min="3">
   <textarea [(ngModel)]="todo.description" placeholder="Información adicional (Opcional)" class="form-control"></textarea>
 
+  <div class="date-time-picker">
+    <input type="text" class="form-control" placeholder="Fecha límite (Opcional)" [owlDateTime]="dt" [owlDateTimeTrigger]="dt" [(ngModel)]="todo.deadline">
+    <owl-date-time #dt></owl-date-time>
+  </div>
+
   <div class="top-space">
     <button type="button" name="button" class="btn blue ligth-text full-width" (click)='save()'>
       <i class="fa fa-save"></i> Guardar
