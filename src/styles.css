@@ -12,8 +12,11 @@
 .text-right {text-align: right}
 .no-background {background-color: transparent}
 .overflow-hidden {overflow: hidden}
+.small-padding {padding: 8px}
+.relative {position: relative}
+.border-radius {border-radius: 5px}
 
-button.no-background {
+button.no-background, button.card {
   font-size: 1em;
   outline: 0;
   border: 0;
@@ -98,4 +101,13 @@ button.no-background {
   justify-content: center;
   background-color: var(--red);
   color: var(--grey)
+}
+
+.notification-window {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 300px;
+  font-size: 0.7em;
+  z-index: 100
 }
