@@ -9,13 +9,24 @@ import {PushNotificationsService} from '../services/push-notifications.service';
   styles: []
 })
 export class AppComponent {
-  public token : boolean = false;
+  public token : any;
+
   constructor(public afAuth: AngularFireAuth, private router: Router, public pushS : PushNotificationsService) {}
 
-  requestPushPermissions() {
-    this.pushS.requestPermission().then(console.log);
+  ngOnInit() {
+    this.token = this.pushS.getSubscription();
   }
-  rejectPushPermissions() {}
+
+  setToken() {
+    this.token = this.pushS.getSubscription();
+  }
+
+  requestPushPermissions() {
+    this.pushS.requestPermission().then(() => this.setToken()).catch(console.log);
+  }
+  cancelPermission() {
+    this.pushS.cancelPermission().then(() => this.setToken()).catch(console.log);
+  }
 
   logout() {
     this.afAuth.auth.signOut().then(() => {
