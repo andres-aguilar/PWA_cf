@@ -10,6 +10,7 @@ import {PushNotificationsService} from '../services/push-notifications.service';
 })
 export class AppComponent {
   public token : any;
+  public showPanel : boolean = false;
 
   constructor(public afAuth: AngularFireAuth, private router: Router, public pushS : PushNotificationsService) {}
 
@@ -23,9 +24,15 @@ export class AppComponent {
 
   requestPushPermissions() {
     this.pushS.requestPermission().then(() => this.setToken()).catch(console.log);
+    this.toggleNotificationWindow();
   }
   cancelPermission() {
     this.pushS.cancelPermission().then(() => this.setToken()).catch(console.log);
+    this.toggleNotificationWindow();
+  }
+
+  toggleNotificationWindow() {
+    this.showPanel = !this.showPanel;
   }
 
   logout() {

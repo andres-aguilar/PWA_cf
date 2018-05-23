@@ -3,7 +3,7 @@
     <span class="nav-title">What to do</span>
   </a>
 
-  <div class="notification-window card small-padding">
+  <div class="notification-window card small-padding" *ngIf="showPanel">
     <div *ngIf="!!(token | async); else activate">
       <p>Te gustaria desactivar las notificaciones?</p>
       <button class="border-radius blue small-padding ligth-text" (click)="cancelPermission()">Desactivar</button>
@@ -15,8 +15,8 @@
   </div>
 
   <div class="float-right" *ngIf="afAuth.authState | async">
-    <a href="">
-      <i class="fa fa-bell"></i>
+    <a (click)="toggleNotificationWindow()">
+      <i class="fa " [ngClass]="{'fa-bell': !!(token | async), 'fa-bell-o': !(token|async)}" ></i>
     </a>
     <a routerLink="/">
       <i class="fa fa-list"></i>
