@@ -16,6 +16,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.token = this.pushS.getSubscription();
+    this.pushS.watchMessages();
   }
 
   setToken() {

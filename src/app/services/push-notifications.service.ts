@@ -1,14 +1,25 @@
 import {Injectable} from '@angular/core';
 
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/rx';
+
 import * as firebase from 'firebase';
 
 @Injectable()
 export class PushNotificationsService {
 
     public messaging = firebase.messaging();
+    public sub : Subject<any> = new Subject();
+    public notification : Observable<any> = this.sub.asObservable();
 
     constructor() {
       this.messaging.getToken().then(console.log);
+    }
+
+    watchMessages() {
+      this.messaging.onMessage((notification)=>{
+        console.log(notification);
+      });
     }
 
     getSubscription() : Promise<any> {
@@ -26,9 +37,9 @@ export class PushNotificationsService {
     }
 
     cancelPermission() : Promise<any> {
-      const subscripotionPr = this.getSubscription();
+      const subscriptionPr = this.getSubscription();
 
-      return subscripotionPr.then((pushS : PushSubscription) => {
+      return subscriptionPr.then((pushS : PushSubscription) => {
         if (!pushS) return Promise.resolve(null);
 
         return pushS.unsubscribe();
