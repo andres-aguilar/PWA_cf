@@ -1,4 +1,4 @@
-export enum TStatus{
+export enum TStatus {
   Created,
   Completed,
   Failed,

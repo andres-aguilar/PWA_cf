@@ -15,12 +15,12 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
   ]
 })
 export class TodoCreatorComponent implements OnInit {
-  @Input() id : string;
-  public formState : string = 'collapsed';
-  public todo : ITodo = {content: '', status: TStatus.Created};
+  @Input() id: string;
+  public formState = 'collapsed';
+  public todo: ITodo = {content: '', status: TStatus.Created};
   ngOnInit() {}
 
-  constructor(private todoS : TodoService) {}
+  constructor(private todoS: TodoService) {}
   save() {
     this.todoS.add(this.id, this.todo).then((r) => {
       this.todo = {content: '', description: null, status: TStatus.Created}
@@ -28,14 +28,14 @@ export class TodoCreatorComponent implements OnInit {
   }
 
   toggleForm() {
-    this.formState = (this.formState == "collapsed") ? 'expanded' : 'collapsed';
+    this.formState = (this.formState === 'collapsed') ? 'expanded' : 'collapsed';
   }
 
   label() {
-    return (this.formState == "collapsed") ? 'Agregar pendiente' : 'Ocultar formulario';
+    return (this.formState === 'collapsed') ? 'Agregar pendiente' : 'Ocultar formulario';
   }
 
   icon() {
-    return (this.formState == "collapsed") ? 'fa-plus' : 'fa-caret-up';
+    return (this.formState === 'collapsed') ? 'fa-plus' : 'fa-caret-up';
   }
 }

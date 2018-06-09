@@ -15,16 +15,16 @@ moment.locale('es');
   animations: [ pressAnimation, statusAnimation ]
 })
 export class TodoCardComponent implements OnInit {
-  @Input() todo : ITodo;
-  @Input() listId : string;
-  public press : string = 'up'; // up|down
-  public moment : any = moment;
+  @Input() todo: ITodo;
+  @Input() listId: string;
+  public press = 'up'; // up|down
+  public moment: any = moment;
 
-  constructor(private todoS : TodoService) {}
+  constructor(private todoS: TodoService) {}
   ngOnInit() {}
 
   completed() {
     this.todo.status = TStatus.Completed;
-    setTimeout(()=>this.todoS.update(this.listId, this.todo), 300);
+    setTimeout(() => this.todoS.update(this.listId, this.todo), 300);
   }
 }

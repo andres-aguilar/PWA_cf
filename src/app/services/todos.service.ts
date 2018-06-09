@@ -7,25 +7,25 @@ import * as firebase from 'firebase/app';
 
 @Injectable()
 export class TodoService {
-  private collection : AngularFirestoreCollection<ITodo>;
-  private ref : Observable<DocumentChangeAction[]>;
-  private listId : string;
+  private collection: AngularFirestoreCollection<ITodo>;
+  private ref: Observable<DocumentChangeAction[]>;
+  private listId: string;
 
-  constructor(private afs : AngularFirestore) {}
+  constructor(private afs: AngularFirestore) {}
 
-  setCollection(listId : string) {
+  setCollection(listId: string) {
     this.listId = listId;
     this.collection = this.afs.collection('lists')
                               .doc(listId)
                               .collection('todos', (ref) => {
-                                return ref.where('status', '==' ,0);
+                                return ref.where('status', '==' , 0);
                               });
 
     this.ref = this.collection.snapshotChanges().share();
   }
 
-  getFromList(listId : string) : Observable<ITodo[]> {
-    if (!this.collection || this.listId != listId) this.setCollection(listId);
+  getFromList(listId: string): Observable<ITodo[]> {
+    if (!this.collection || this.listId !== listId) { this.setCollection(listId); }
 
     return this.ref.map(actions => {
       return actions.map(item => {
@@ -37,8 +37,8 @@ export class TodoService {
     })
   }
 
-  add(listId : string, todo : ITodo) : Promise<any> {
-    if (!this.collection || this.listId != listId) this.setCollection(listId);
+  add(listId: string, todo: ITodo): Promise<any> {
+    if (!this.collection || this.listId !== listId) { this.setCollection(listId); }
 
     const createdAt = firebase.firestore.FieldValue.serverTimestamp();
     todo.createdAt = createdAt;
@@ -46,8 +46,8 @@ export class TodoService {
     return this.collection.add(todo);
   }
 
-  update(listId: string, todo: ITodo) : Promise<void> {
-    if (!this.collection || this.listId != listId) this.setCollection(listId);
+  update(listId: string, todo: ITodo): Promise<void> {
+    if (!this.collection || this.listId !== listId) { this.setCollection(listId); }
 
     return this.collection.doc(todo.id).update({status: todo.status});
   }

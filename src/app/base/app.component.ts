@@ -9,8 +9,8 @@ import {PushNotificationsService} from '../services/push-notifications.service';
   styles: []
 })
 export class AppComponent {
-  public token : any;
-  public showPanel : boolean = false;
+  public token: any;
+  public showPanel = false;
 
   constructor(public afAuth: AngularFireAuth, private router: Router, public pushS : PushNotificationsService) {}
 

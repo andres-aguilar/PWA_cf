@@ -11,11 +11,11 @@ import { enterState } from '../animations/enter.animation';
   animations: [ enterState ]
 })
 export class ListComponent implements OnInit {
-  public listId : string;
-  public todos : Observable<ITodo[]>;
+  public listId: string;
+  public todos: Observable<ITodo[]>;
   trackTodoObjects = (id, obj) => obj.id;
 
-  constructor(private route : ActivatedRoute, private todoS : TodoService) {}
+  constructor(private route: ActivatedRoute, private todoS: TodoService) {}
 
   ngOnInit() {
     this.listId = this.route.snapshot.params.id;

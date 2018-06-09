@@ -10,7 +10,7 @@ import { enterState } from '../animations/enter.animation';
 export class HomeComponent implements OnInit {
   public message: string;
 
-  constructor(public listS : ListService) {}
+  constructor(public listS: ListService) {}
 
   ngOnInit() {}
 }

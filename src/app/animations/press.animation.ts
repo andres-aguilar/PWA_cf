@@ -1,4 +1,4 @@
-import {animate, transition, trigger, state, style} from "@angular/animations";
+import {animate, transition, trigger, state, style} from '@angular/animations';
 
 export const pressAnimation = trigger('pressAnimation', [
   state('up,void', style({transform: 'translateX(0)'})),

@@ -1,4 +1,4 @@
-import {animate, transition, trigger, state, style} from "@angular/animations";
+import {animate, transition, trigger, state, style} from '@angular/animations';
 
 export const statusAnimation = trigger('statusAnimation', [
   state('0,void', style({transform: 'translateX(0)', opacity: 1})),

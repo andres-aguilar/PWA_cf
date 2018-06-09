@@ -12,7 +12,7 @@ import {IList} from '../structures/lists';
 export class ListService {
   public uid: string;
   public listCollection: AngularFirestoreCollection<IList>;
-  public lists : Observable<IList[]>;
+  public lists: Observable<IList[]>;
 
   constructor(public afs: AngularFirestore, private auth: AuthService) {
     this.auth.getUser().subscribe(user => {
