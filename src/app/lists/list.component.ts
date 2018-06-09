@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {ITodo} from '../structures/todos';
-import {Observable} from 'rxjs/Rx';
-import {TodoService} from '../services/todos.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ITodo } from '../structures/todos';
+import { Observable } from 'rxjs/Rx';
+import { TodoService } from '../services/todos.service';
 import { enterState } from '../animations/enter.animation';
 
 @Component({

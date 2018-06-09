@@ -1,6 +1,6 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {ITodo, TStatus} from '../../structures/todos';
-import {TodoService} from '../../services/todos.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ITodo, TStatus } from '../../structures/todos';
+import { TodoService } from '../../services/todos.service';
 
 // import animations
 import { pressAnimation } from '../../animations/press.animation';
