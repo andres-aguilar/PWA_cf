@@ -3,10 +3,12 @@ import {ActivatedRoute} from '@angular/router';
 import {ITodo} from '../structures/todos';
 import {Observable} from 'rxjs/Rx';
 import {TodoService} from '../services/todos.service';
+import { enterState } from '../animations/enter.animation';
 
 @Component({
   selector: 'list',
-  templateUrl: 'list.component.html'
+  templateUrl: 'list.component.html',
+  animations: [ enterState ]
 })
 export class ListComponent implements OnInit {
   public listId : string;
